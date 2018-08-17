@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="George W. Park">
+
+    <!-- Title -->
+    <title>GIPHY Search API</title>
+
+    <!-- External CSS Files -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+
+</head>
+<body>
+
+    <header>
+
+        <h1><span class="giphy-logo">GIPHY</span> <span>Search API</span></h1>
+
+    </header>
+
+    <main>
+
+        <div class="container">
+
+            <div class="gif-search-container">
+
+                <div>
+                    <label for="search" class="gif-search-label">GIF Search:</label>
+                    <input type="text" id="search" class="gif-search-input gif-search-term" placeholder="e.g. funny cats">
+                </div>
+
+                <div>
+                    <label for="limit" class="gif-search-label">No. of GIFs:</label>
+                    <input type="number" id="search" class="gif-search-input gif-search-limit" placeholder="e.g. 30" value="30">
+                </div>
+
+            </div>
+
+            <div class="loader"></div>
+
+            <div class="gifs-output"></div>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <a href="https://developers.giphy.com/" target="_blank">
+            <img src="http://www.georgewpark.com/codepen_assets/powered_by_giphy.png" alt="Powered By GIPHY">
+        </a>
+
+    </footer>
+
+    <!-- External JavaScript File -->
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
