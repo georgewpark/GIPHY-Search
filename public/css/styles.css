@@ -1,5 +1,12 @@
+/* Base Styles */
+
 :root {
     font-size: 10px;
+}
+
+:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.3rem #93f;
 }
 
 * {
@@ -20,6 +27,22 @@ body {
     padding: 2.5rem 2rem 9rem;
 }
 
+.loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.4rem solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 400ms linear infinite;
+}
+
+img {
+    display: block;
+}
+
+/* Header */
+
 header {
     background-color: #111;
 }
@@ -35,20 +58,11 @@ h1 span {
     white-space: nowrap;
 }
 
-.loader {
-    display: none;
-    width: 5rem;
-    height: 5rem;
-    border: 0.4rem solid #fff;
-    border-top-color: transparent;
-    border-radius: 50%;
-    margin: 0 auto;
-    animation: loader 400ms linear infinite;
-}
-
 .giphy-logo {
     font-weight: 800;
 }
+
+/* Search Input */
 
 .gif-search-container {
     display: flex;
@@ -76,10 +90,7 @@ h1 span {
     text-align: center;
 }
 
-.gif-search-input:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.3rem #93f;
-}
+/* Search Output */
 
 .gifs-output {
     display: flex;
@@ -92,27 +103,27 @@ h1 span {
 .gif-container {
     flex: 1 0 22rem;
     margin: 1rem;
-    animation: fadeUp 1s;
+    animation: fadeInUp 1s;
 }
 
 .gif {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16), 0 0.3rem 0.6rem rgba(0, 0, 0, 0.23);
 }
 
+/* Footer */
+
 footer {
+    display: flex;
+    justify-content: center;
     position: fixed;
     width: 100%;
     bottom: 0;
     z-index: 1;
     padding: 2.2rem;
     background-color: #111;
-}
-
-footer img {
-    vertical-align: middle;
 }
 
 /* Grid Feature Query */
@@ -139,7 +150,7 @@ footer img {
 
 /* Fade Up Animation */
 
-@keyframes fadeUp {
+@keyframes fadeInUp {
     from {
         transform: translateY(50%);
         opacity: 0;
