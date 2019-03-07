@@ -4,7 +4,7 @@ This project demonstrates how the GIPHY search API can be used to retrieve a spe
 ![GIPHY Search Demo](demo-gif.gif "GIPHY Search Demo")
 
 ## Live Demo
-A live demo is available on [CodePen](https://codepen.io/GeorgePark/full/bMWGRB/).
+A live demo is available on [CodePen](https://codepen.io/GeorgePark/full/bMWGRB/) and [Netlify](https://giphy-search-api.netlify.com/).
 
 ## License
 This project is licensed under the MIT License - see the [license.md](license.md) file for details.
