@@ -1,4 +1,4 @@
-export default function debounce(func, wait = 800) {
+const debounce = (func, wait = 800) => {
   let timeout
 
   return function () {
@@ -13,3 +13,5 @@ export default function debounce(func, wait = 800) {
     }, wait)
   }
 }
+
+export default debounce
