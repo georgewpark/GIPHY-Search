@@ -46,6 +46,8 @@ const GiphySearch = () => {
       return
     }
 
+    const fetchController = new AbortController()
+
     fetch(`${apiUrl}?api_key=${apiKey}&q=${searchTerm}&limit=${searchLimit}`)
       .then((res) => res.json())
       .then((data) => {
@@ -61,6 +63,8 @@ const GiphySearch = () => {
         setSearching(false)
         setSearched(true)
       })
+
+    return () => fetchController.abort()
   }, [searchTerm, searchLimit])
 
   return (
