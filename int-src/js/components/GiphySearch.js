@@ -47,8 +47,9 @@ const GiphySearch = () => {
     }
 
     const fetchController = new AbortController()
+    const { signal } = fetchController
 
-    fetch(`${apiUrl}?api_key=${apiKey}&q=${searchTerm}&limit=${searchLimit}`)
+    fetch(`${apiUrl}?api_key=${apiKey}&q=${searchTerm}&limit=${searchLimit}`, { signal })
       .then((res) => res.json())
       .then((data) => {
         if (data.meta.status === 200) {
