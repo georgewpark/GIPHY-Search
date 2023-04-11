@@ -1,10 +1,10 @@
 import { Gif } from '../types/types'
 
-type CharacterProps = {
+type GifProps = {
   gif: Gif
 }
 
-const GifItem = ({ gif }: CharacterProps) => {
+const GifItem = ({ gif }: GifProps) => {
   return (
     <div className='gif'>
       <a
