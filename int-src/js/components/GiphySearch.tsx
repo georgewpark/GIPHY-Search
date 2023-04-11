@@ -1,11 +1,12 @@
 
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useDebounce } from '../hooks/useDebounce'
+import { Gif } from '../types/types'
 import Header from './Header'
 import Search from './Search'
 import Results from './Results'
 import Loader from './Loader'
 import Footer from './Footer'
-import debounce from '../debounce'
 
 const GiphySearch = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -13,7 +14,7 @@ const GiphySearch = () => {
   const [searching, setSearching] = useState(false)
   const [searched, setSearched] = useState(false)
   const [error, setError] = useState(false)
-  const [gifs, setGifs] = useState([])
+  const [gifs, setGifs] = useState<Gif[]>([])
 
   const initialRender = useRef(true)
 
@@ -21,24 +22,20 @@ const GiphySearch = () => {
   const apiKey = '1caQBCCly08w0vinpWmp1AK5ep8o6gsj'
   const gifLimit = 50
 
-  const handleSearchTermInput = useMemo(() =>
-    debounce((inputValue) => {
-      setSearching(true)
-      setSearchTerm(inputValue)
-    })
-  )
+  const handleSearchTermInput = useDebounce((inputValue: string) => {
+    setSearching(true)
+    setSearchTerm(inputValue)
+  }, 800)
 
-  const handleSearchLimitInput = useMemo(() =>
-    debounce((inputValue) => {
-      if (inputValue > gifLimit) {
-        inputValue = gifLimit
-      } else if (inputValue < 1) {
-        inputValue = 1
-      }
-      setSearching(true)
-      setSearchLimit(inputValue)
-    })
-  )
+  const handleSearchLimitInput = useDebounce((inputValue: number) => {
+    if (inputValue > gifLimit) {
+      inputValue = gifLimit
+    } else if (inputValue < 1) {
+      inputValue = 1
+    }
+    setSearching(true)
+    setSearchLimit(inputValue)
+  }, 800)
 
   useEffect(() => {
     if (initialRender.current) {
@@ -74,12 +71,12 @@ const GiphySearch = () => {
       <main>
         <div className='container'>
           <Search
-            gifLimit={ gifLimit }
-            handleSearchTermInput={ e => handleSearchTermInput(e.target.value) }
-            handleSearchLimitInput={ e => handleSearchLimitInput(e.target.value) }
+            gifLimit={gifLimit}
+            handleSearchTermInput={e => handleSearchTermInput(e.target.value)}
+            handleSearchLimitInput={e => handleSearchLimitInput(parseInt(e.target.value))}
           />
-          { searching && <Loader /> }
-          { !searching && searched && <Results gifs={ gifs } error={ error } /> }
+          {searching && <Loader />}
+          {!searching && searched && <Results gifs={gifs} error={error} />}
         </div>
       </main>
       <Footer />

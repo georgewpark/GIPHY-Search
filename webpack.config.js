@@ -56,19 +56,23 @@ module.exports = {
         ]
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
             presets: [
               "@babel/preset-env",
-              ["@babel/preset-react", { "runtime": "automatic" }]
+              ["@babel/preset-react", { "runtime": "automatic" }],
+              "@babel/preset-typescript"
             ]
           }
         }
       }
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   optimization: {
     minimizer: [

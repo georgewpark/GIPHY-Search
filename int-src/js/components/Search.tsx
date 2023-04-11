@@ -1,4 +1,12 @@
-const Search = ({ gifLimit, handleSearchTermInput, handleSearchLimitInput }) => {
+import { ChangeEvent } from "react"
+
+type SearchProps = {
+  gifLimit: number,
+  handleSearchTermInput: (e: ChangeEvent<HTMLInputElement>) => void,
+  handleSearchLimitInput: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+const Search = ({ gifLimit, handleSearchTermInput, handleSearchLimitInput }: SearchProps) => {
   return (
     <div className='gif-search'>
       <div className='gif-search__field'>
@@ -10,7 +18,7 @@ const Search = ({ gifLimit, handleSearchTermInput, handleSearchLimitInput }) => 
           id='search'
           className='gif-search__input gif-search__input--term'
           placeholder='e.g. funny cats'
-          onChange={ handleSearchTermInput }
+          onChange={handleSearchTermInput}
         />
       </div>
       <div className='gif-search__field'>
@@ -24,8 +32,8 @@ const Search = ({ gifLimit, handleSearchTermInput, handleSearchLimitInput }) => 
           placeholder='e.g. 30'
           defaultValue='30'
           min='1'
-          max={ gifLimit }
-          onChange={ handleSearchLimitInput }
+          max={gifLimit}
+          onChange={handleSearchLimitInput}
         />
       </div>
     </div>
