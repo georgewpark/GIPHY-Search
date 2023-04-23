@@ -1,12 +1,16 @@
-import { ChangeEvent } from "react"
+import { ChangeEvent } from 'react'
 
 type SearchProps = {
-  gifLimit: number,
-  handleSearchTermInput: (e: ChangeEvent<HTMLInputElement>) => void,
+  gifLimit: number
+  handleSearchTermInput: (e: ChangeEvent<HTMLInputElement>) => void
   handleSearchLimitInput: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
-const Search = ({ gifLimit, handleSearchTermInput, handleSearchLimitInput }: SearchProps) => {
+const Search = ({
+  gifLimit,
+  handleSearchTermInput,
+  handleSearchLimitInput,
+}: SearchProps) => {
   return (
     <div className='gif-search'>
       <div className='gif-search__field'>

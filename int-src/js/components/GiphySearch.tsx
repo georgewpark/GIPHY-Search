@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react'
 import { useDebounce } from '../hooks/useDebounce'
 import { Gif } from '../types/types'
@@ -46,9 +45,11 @@ const GiphySearch = () => {
     const fetchController = new AbortController()
     const { signal } = fetchController
 
-    fetch(`${apiUrl}?api_key=${apiKey}&q=${searchTerm}&limit=${searchLimit}`, { signal })
-      .then((res) => res.json())
-      .then((data) => {
+    fetch(`${apiUrl}?api_key=${apiKey}&q=${searchTerm}&limit=${searchLimit}`, {
+      signal,
+    })
+      .then(res => res.json())
+      .then(data => {
         if (data.meta.status === 200) {
           setGifs([...data.data])
           setError(false)
@@ -73,7 +74,9 @@ const GiphySearch = () => {
           <Search
             gifLimit={gifLimit}
             handleSearchTermInput={e => handleSearchTermInput(e.target.value)}
-            handleSearchLimitInput={e => handleSearchLimitInput(parseInt(e.target.value))}
+            handleSearchLimitInput={e =>
+              handleSearchLimitInput(parseInt(e.target.value))
+            }
           />
           {searching && <Loader />}
           {!searching && searched && <Results gifs={gifs} error={error} />}
@@ -83,6 +86,5 @@ const GiphySearch = () => {
     </>
   )
 }
-
 
 export default GiphySearch

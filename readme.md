@@ -1,12 +1,15 @@
 # GIPHY Search API
+
 This pen shows how React and the GIPHY search API can be used to retrieve GIFs based on a search parameter and display them responsively using CSS Grid and no media queries.
 
-![GIPHY Search API Demo](demo-gif.gif "GIPHY Search API Demo")
+![GIPHY Search API Demo](demo-gif.gif 'GIPHY Search API Demo')
 
 ## Live Demo
+
 A live demo is available on [CodePen](https://codepen.io/GeorgePark/full/bMWGRB) and [Netlify](https://giphy-search-api.netlify.app/).
 
 ## License
+
 This project is licensed under the MIT License - see the [license.md](license.md) file for details.
 
 ## Project Setup
