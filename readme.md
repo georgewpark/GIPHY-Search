@@ -2,7 +2,7 @@
 
 This project demonstrates how React and the GIPHY search API can be used to retrieve GIFs based on a search parameter and display them is a masonry grid layout using pure CSS columns.
 
-![GIPHY Search Demo](demo-gif.gif 'GIPHY Search Demo')
+![GIPHY Search Demo](demo-image.jpg 'GIPHY Search Demo')
 
 ## Live Demo
 
