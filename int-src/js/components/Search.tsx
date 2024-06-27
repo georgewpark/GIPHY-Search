@@ -12,7 +12,7 @@ const Search = ({
   handleSearchLimitInput,
 }: SearchProps) => {
   return (
-    <div className='gif-search'>
+    <section className='gif-search' aria-label='gif search'>
       <div className='gif-search__field'>
         <label htmlFor='search' className='gif-search__label'>
           GIF Search:
@@ -21,7 +21,7 @@ const Search = ({
           type='text'
           id='search'
           className='gif-search__input gif-search__input--term'
-          placeholder='e.g. funny cats'
+          placeholder='funny cats'
           onChange={handleSearchTermInput}
         />
       </div>
@@ -33,14 +33,14 @@ const Search = ({
           type='number'
           id='limit'
           className='gif-search__input gif-search__input--limit'
-          placeholder='e.g. 30'
+          placeholder='30'
           defaultValue='30'
           min='1'
           max={gifLimit}
           onChange={handleSearchLimitInput}
         />
       </div>
-    </div>
+    </section>
   )
 }
 

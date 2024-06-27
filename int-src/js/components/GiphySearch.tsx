@@ -4,7 +4,6 @@ import { Gif } from '../types/types'
 import Header from './Header'
 import Search from './Search'
 import Results from './Results'
-import Loader from './Loader'
 import Footer from './Footer'
 
 const GiphySearch = () => {
@@ -78,8 +77,12 @@ const GiphySearch = () => {
               handleSearchLimitInput(parseInt(e.target.value))
             }
           />
-          {searching && <Loader />}
-          {!searching && searched && <Results gifs={gifs} error={error} />}
+          <Results
+            gifs={gifs}
+            searching={searching}
+            searchResponse={!searching && searched && !error}
+            error={error}
+          />
         </div>
       </main>
       <Footer />

@@ -6,7 +6,7 @@ type GifProps = {
 
 const GifItem = ({ gif }: GifProps) => {
   return (
-    <div className='gif'>
+    <li className='gif'>
       <a
         className='gif__link'
         href={gif.images.original.url}
@@ -20,7 +20,7 @@ const GifItem = ({ gif }: GifProps) => {
           alt={gif.title}
         />
       </a>
-    </div>
+    </li>
   )
 }
 

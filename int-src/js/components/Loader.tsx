@@ -1,8 +1,8 @@
 const Loader = () => {
   return (
-    <div className='loader'>
+    <li className='loader'>
       <span className='sr-only'>Loading</span>
-    </div>
+    </li>
   )
 }
 
