@@ -9,7 +9,7 @@ type SearchProps = {
 const Search = ({
   gifLimit,
   handleSearchTermInput,
-  handleSearchLimitInput,
+  handleSearchLimitInput
 }: SearchProps) => {
   return (
     <section className='gif-search' aria-label='gif search'>

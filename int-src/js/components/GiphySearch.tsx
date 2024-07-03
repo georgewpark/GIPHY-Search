@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useDebounce } from '../hooks/useDebounce'
 import { Gif } from '../types/types'
-import Header from './Header'
-import Search from './Search'
-import Results from './Results'
 import Footer from './Footer'
+import Header from './Header'
+import Results from './Results'
+import Search from './Search'
 
 const GiphySearch = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -45,7 +45,7 @@ const GiphySearch = () => {
     const { signal } = fetchController
 
     fetch(`${apiUrl}?api_key=${apiKey}&q=${searchTerm}&limit=${searchLimit}`, {
-      signal,
+      signal
     })
       .then(res => res.json())
       .then(data => {
