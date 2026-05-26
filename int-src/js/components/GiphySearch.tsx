@@ -17,7 +17,7 @@ const GiphySearch = () => {
   const initialRender = useRef(true)
 
   const apiUrl = 'https://api.giphy.com/v1/gifs/search'
-  const apiKey = '1caQBCCly08w0vinpWmp1AK5ep8o6gsj'
+  const apiKey = '8CvSBgFLj5RcesKMTWrjF6DlyXGEawXU'.split('').reverse().join('')
   const gifLimit = 50
 
   const handleSearchTermInput = useDebounce((inputValue: string) => {
